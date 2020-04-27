@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	
+<head>
+	<title>Formulário de Cadastro - Facebook</title>
+	
+	<style type="text/css">
+		
+		body {
+			margin: 0;
+
+			background-image: linear-gradient(to bottom, white, #a3abb7b5 180%);	
+
+		}
+
+		/*TÍTULOS */
+
+		h1, p {
+			color: #000000cc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		form h4 {
+			color: #90949c;
+		}
+
+		/*Espaçamento geral*/
+
+		header, .form {
+			margin: 0 auto 50px auto;
+			width: 90%; 
+     		max-width: 500px;
+    	}
+
+		header {
+			margin: 0 auto 0 auto;
+		}
+
+		/*Espaçamento/Borda do input e botão */
+
+		form input, form button {
+		
+			margin-bottom: 8px; 
+			padding: 6px 10px;
+			border-radius: 5px;
+			border: 1px grey solid;
+			border-color: #c8c8c8;
+		}
+
+		fieldset {
+			border-color: transparent;
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		#email, #senha {
+			width: 350px;
+		}
+
+		form input::placeholder {
+    	    color: grey;
+	    }
+
+ 	/*BOTÃO*/
+
+		button {
+			width: 175px;
+	    	margin-bottom: 10px;
+
+			background-color:#69a74e;;
+
+			color: white;
+			font-size: 16px;
+			font-weight: bold;
+
+			cursor: pointer;
+			
+			transition-duration: 200ms;
+		}
+
+		button:hover {
+			opacity: 80%;
+		}
+	</style>
+</head>
+
+
+<body>
+
+	<header>
+
+		<h1>Abra uma conta</h1>
+		<p>É rapido e fácil.</p>
+
+	</header>
+
+<section class="form">
+	<form action="#" name="form">
+		<fieldset>
+			<input 
+				type="text" 
+				name="nome" 
+				placeholder="Nome">
+
+			<input 
+				type="text" 
+				name="sobrenome" 
+				placeholder="Sobrenome"><br>	
+
+			<input 
+				id="email" 
+			    type="text"
+			    name="email"
+			    placeholder="Celular ou email"><br>
+			      
+
+       		 <input 
+       		 	id="senha" 
+       			type="password" 
+        		name="senha"
+       			placeholder="Nova senha"><br>
+        
+			
+		<div id="data">
+
+			<h4>Data de nascimento</h4>
+
+		<select name="dia">
+
+			<option selected disabled=>Dia</option>
+
+
+			<option value="dia">4</option> 
+
+		</select>
+
+		<select name="mes"> 
+				<option selected disabled=>Mês</option>
+				<option value="mes">Janeiro</option> 
+				<option value="mes">Fevereiro</option> 
+				<option value="mes">Março</option> 
+				<option value="mes">Abril</option> 
+				<option value="mes">Maio</option> 
+				<option value="mes">Junho</option> 
+				<option value="mes">Julho</option> 
+				<option value="mes">Agosto</option> 
+				<option value="mes">Setembro</option> 
+				<option value="mes">Outubro</option> 
+				<option value="mes">Novembro</option> 
+				<option value="mes">Dezembro</option> 
+
+		</select>
+
+		<select name="ano">
+				<option selected disabled=>Ano</option>
+				<option value="ano">1994</option>
+
+			
+		</select>
+
+		</div>
+
+		<label id="genero"> 
+
+			<h4>Gênero</h4>
+
+				<input 
+				type="radio" 
+				name="genero"
+				value="feminino">Feminino
+			</label>
+			<label><input 
+				type="radio" 
+				name="genero"
+				value="masculino">Masculino
+			</label>
+
+			<label><input 
+				type="radio" 
+				name="genero"
+				value="personalizado">Personalizado
+			</label>
+
+</fieldset>
+   
+        <button>Cadastre-se</button>
+    </form>
+ </section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
