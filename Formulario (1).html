@@ -104,18 +104,22 @@
 			<input 
 				type="text" 
 				name="nome" 
-				placeholder="Nome">
+				placeholder="Nome"
+				onblur="return vNome()">
 
 			<input 
 				type="text" 
 				name="sobrenome" 
-				placeholder="Sobrenome"><br>	
+				placeholder="Sobrenome"
+				onblur="return vSobrenome()"><br>	
 
 			<input 
 				id="email" 
 			    type="text"
-			    name="email"
-			    placeholder="Celular ou email"><br>
+			    name="contato"
+				placeholder="Celular ou email"
+				onblur="return celemail()"
+				><br>
 			      
 
        		 <input 
@@ -190,6 +194,118 @@
         <button>Cadastre-se</button>
     </form>
  </section>
+
+ <script>
+	function vNome() {
+		var nome = form.nome.value
+		if (nome == "") {
+			alert("Campo nome não pode estar em branco.")
+			return false
+		}
+		var regex = /[0-9]/           //expressão regular (definir um conjunto de caracteres a ser testado)
+		if (regex.test(nome) == true) {                     //realiza o teste com a regex
+			alert("No campo nome não pode ter número.")
+			return false
+		}
+		if (nome.length == 1) {                    //length - busca o tamanho de determinada string (cadeida de caracteres)
+			alert("Você não pode abreviar o nome.")
+		}
+	}
+	function vSobrenome() {
+		var snome = form.sobrenome.value
+		if (snome == "") {
+			alert("Campo sobrenome não pode estar em branco.")
+			return false
+		}
+		var regex = /[0-9]/
+		if (regex.test(snome) == true) {
+			alert("No campo sobrenome não pode ter número.")
+			return false
+		}
+	}
+
+	function celemail() {
+		var info = form.contato.value
+		if (info == "") {
+			alert("e-mail ou telefone não pode estar em branco.")
+			return false
+		}
+		if (info.indexOf('@') >= 0) {                         //buscar um caracter expecifico dentro da variável
+			var email = info.split("@")                          //quebra a string a partir de um caracter específico (dividindo a string original em um ARRAY)
+			if (email[0] == "") {
+				alert("e-mail não pode estar em branco.")
+				return false
+			}
+			if (email[1].indexOf('.') < 0) {
+				alert("Complete seu e-mail corretamente.")
+			}
+			var segundaParte = email[1].split(".")
+			if (segundaParte[0] == "") {
+				alert("Preencha seu e-mail corretamente.")
+			}
+			if (segundaParte[1] == "") {
+				alert("Preencha seu e-mail corretamente.")
+			}
+		} else {
+			if (info.length != 11) {
+				alert("Digite DDD e número do celular.")
+				return false
+			}
+			var reg = /[A-Za-z]/
+			if (reg.test(info) == true) {
+				alert("Digite somente número no campo de contato.")
+				return false
+			}
+
+
+
+		}
+
+	}
+	function vSenha() {
+		var senha = form.senha.value
+		if (senha.length == "") {
+			alert("campo em branco: senha")
+			return false
+		}
+		if (senha.length < 8) {
+			alert("senha menor que 8 caracteres")
+		}
+		var regex = /[0-9]/
+		var reg = /[A-Za-z]/
+		if (reg.test(senha) == false || regex.test(senha) == false) {
+			alert("digite letras e numeros")
+		}
+
+	}
+
+	function valida() {
+		vNome()
+		vSobrenome()
+		celemail()
+		vSenha()
+		var dia = form.dia.value, mes = form.mes.value, ano = form.ano.value
+		if (dia == "") {
+			alert("selecione o dia de nascimento.")
+			return false
+		}
+		if (mes == "") {
+			alert("selecione o mês de nascimento.")
+			return false
+		}
+		if (ano == "") {
+			alert("selecione o ano de nascimento.")
+			return false
+		}
+		var gen = form.genero.value
+		if (gen == "") {
+			alert("Selecione um gênero.")
+			return false
+		}
+
+	}
+
+</script>
 
 </body>
 </html>
